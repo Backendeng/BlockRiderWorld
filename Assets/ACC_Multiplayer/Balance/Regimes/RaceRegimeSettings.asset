@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205a04d1485958949a173267a2157131, type: 3}
+  m_Name: RaceRegimeSettings
+  m_EditorClassIdentifier: 
+  m_RegimeSceneName: RaceRegimeScene
+  m_AvailableCars:
+  - {fileID: 11400000, guid: c2e0730ffb62dca43a25f3f7d9029f3b, type: 2}
+  - {fileID: 11400000, guid: 3fc2772494136a04c8bca295cde9e6ae, type: 2}
+  - {fileID: 11400000, guid: ce38898d33b28f541b4ef601e07fb0f2, type: 2}
+  - {fileID: 11400000, guid: cee975a231c68a34885aeae5bbe0973c, type: 2}
+  - {fileID: 11400000, guid: 1c2b1e5a7c20b3643a66257b83eb94c2, type: 2}
+  - {fileID: 11400000, guid: 9b8008e7cfbcb7e4999187becef19066, type: 2}
+  - {fileID: 11400000, guid: 8dbee3fe26c548e47b92253718e281eb, type: 2}
+  - {fileID: 11400000, guid: 78842a8260bf5e14092215fe8297fa7d, type: 2}
+  - {fileID: 11400000, guid: b7e7574d24329e24f85889c45141afe4, type: 2}
+  - {fileID: 11400000, guid: 21ec9577257b6da4fa5c15cb39e724ad, type: 2}
+  - {fileID: 11400000, guid: e3e44f86ef41ae44f9524f8f97d125c5, type: 2}
+  - {fileID: 11400000, guid: c99f385832331f646a715bc84be4714e, type: 2}
+  - {fileID: 11400000, guid: 8fd5f7ecaea171146ac006746708c4b8, type: 2}
+  - {fileID: 11400000, guid: c9974acfb6e0e754caa5ec4100aa9c09, type: 2}
+  - {fileID: 11400000, guid: d4708b76b477cbf43a64085c87796a30, type: 2}
+  - {fileID: 11400000, guid: d5d33386edbf3c444a826b4178b06446, type: 2}
+  - {fileID: 11400000, guid: 5454227947dbd15419e3cfcb2deba04e, type: 2}
+  - {fileID: 11400000, guid: b9733645024248544a89d9251c402165, type: 2}
+  - {fileID: 11400000, guid: 5aed270626dbd8a4e9de944f8b750663, type: 2}
+  - {fileID: 11400000, guid: 731e27773466e454f87c8d20d5b22afd, type: 2}
+  - {fileID: 11400000, guid: 090f5602ce3dc2541991a783be721f13, type: 2}
+  - {fileID: 11400000, guid: ec087c351741e834792d753a2d1b6b80, type: 2}
+  - {fileID: 11400000, guid: 530ae5bce3179c04aa89f4c854100941, type: 2}
+  - {fileID: 11400000, guid: 443e900da97187142bba86740d1d202b, type: 2}
+  - {fileID: 11400000, guid: a4a327ce6aab748488546f53f7d21db0, type: 2}
+  - {fileID: 11400000, guid: a50fd1da7e02e9a4a85a68c525698fe8, type: 2}
+  - {fileID: 11400000, guid: e934f7960b2708a4c92ade8f39691859, type: 2}
+  - {fileID: 11400000, guid: 568b4ff36c7a54244ad37c6fb26c9867, type: 2}
+  - {fileID: 11400000, guid: eabb56fccd5a3fc45b4a60169bd06dda, type: 2}
+  - {fileID: 11400000, guid: afda123f2b459434cb09ae61bd068bde, type: 2}
+  - {fileID: 11400000, guid: 4d94ffa2b777ec247860b9c22f32004a, type: 2}
+  - {fileID: 11400000, guid: 2306a038923c4fd4b9923e93299fb1b9, type: 2}
+  - {fileID: 11400000, guid: 6bd03da2673f9a44da7986024b80edee, type: 2}
+  - {fileID: 11400000, guid: 7d60ab14a26d00c48b3087ccd7109cc0, type: 2}
+  - {fileID: 11400000, guid: 49b25ca8bb54b4542bcfd73b16a78953, type: 2}
+  - {fileID: 11400000, guid: 94a6d6f13944b7c478826fe7f69164e2, type: 2}
+  - {fileID: 11400000, guid: c13901a14b30dba4bb655c8829032b96, type: 2}
+  - {fileID: 11400000, guid: b476b1e0c7100e34f8ec6cb2b5f86b67, type: 2}
+  - {fileID: 11400000, guid: affa6ef896d0d5a4586756863b4632ed, type: 2}
+  - {fileID: 11400000, guid: bd0d363b741c22b4e8811c5e0e375eaa, type: 2}
+  - {fileID: 11400000, guid: a913c0ca59bde554f83c045c8da56222, type: 2}
+  - {fileID: 11400000, guid: b8ca185ad95d8cb4bb22f998ce92d38a, type: 2}
+  - {fileID: 11400000, guid: 06fcf90cb80852a4687230fc7552ae07, type: 2}
+  - {fileID: 11400000, guid: 24a2ac108f3d518418da9799de3fdc5f, type: 2}
+  - {fileID: 11400000, guid: c1d26be375e445447a26d64250dca309, type: 2}
+  - {fileID: 11400000, guid: e308e23cf7675d44591013136737df82, type: 2}
+  - {fileID: 11400000, guid: 18c2c53df4d45c24f9d436452cfa744a, type: 2}
+  - {fileID: 11400000, guid: ff3c2b1ac2b58bf48acdc5b8cc25b5c6, type: 2}
+  - {fileID: 11400000, guid: d624745c85fcdd947a18545dba22b7e5, type: 2}
+  - {fileID: 11400000, guid: 604b927c958ef5f42bec0e5debce51c9, type: 2}
+  - {fileID: 11400000, guid: 0bfc9187530bcf94a971c94301240fc6, type: 2}
+  - {fileID: 11400000, guid: 9b96d4fce6edde84b9fb7aaefc9ab59d, type: 2}
+  - {fileID: 11400000, guid: 7432db062ac4cd742a256c7c21ba6f17, type: 2}
+  - {fileID: 11400000, guid: e8cbfbee7591cc24a9e2817e11da2a91, type: 2}
+  - {fileID: 11400000, guid: 928044218fed6e34b87307d70a77c4c1, type: 2}
+  - {fileID: 11400000, guid: 4517fe11016ff9148b38adc611d9788d, type: 2}
+  - {fileID: 11400000, guid: d2281219b19d4eb4bb4db12c0b8ed70e, type: 2}
+  - {fileID: 11400000, guid: 3b9d5cb10062ee542adf0b6d092a79ed, type: 2}
+  - {fileID: 11400000, guid: ea1e670f349d6ea4b872d9990e28eed9, type: 2}
+  - {fileID: 11400000, guid: 4e5ff04a4cc35e444ac31e28c7c1593d, type: 2}
+  - {fileID: 11400000, guid: f22ae4ed01b1fea4398afceb2fd90a06, type: 2}
+  - {fileID: 11400000, guid: abd2e9079e93b2f458111b78b3d4a521, type: 2}
+  - {fileID: 11400000, guid: afa4e7411f3b2574f983146d568164b0, type: 2}
+  - {fileID: 11400000, guid: 5360704fa7befea45a1c221646785f16, type: 2}
+  - {fileID: 11400000, guid: 6e819286a46ba234a9a974ec7c4fc495, type: 2}
+  - {fileID: 11400000, guid: b6bbf43e4c80ce74cbfc66a90746f376, type: 2}
+  - {fileID: 11400000, guid: 36db3006bec40674db4483cb0da9d2f0, type: 2}
+  - {fileID: 11400000, guid: 551c78cd60ad8e7429c5c6e11cdfcdba, type: 2}
+  - {fileID: 11400000, guid: c6b9cdec016f14f4a9e272e27207af59, type: 2}
+  - {fileID: 11400000, guid: d093b923752e15b40ac0ba7238a205bd, type: 2}
+  m_AiConfog:
+    MaxSpeed: 250
+    MinSpeed: 50
+    AccelSensitivity: 1.2
+    BrakeSensitivity: 1
+    ReverceWaitTime: 1.5
+    ReverceTime: 1
+    BetweenReverceTimeForReset: 8
+    OffsetToFirstTargetPoint: 5
+    SpeedFactorToFirstTargetPoint: -0.4
+    OffsetToSecondTargetPoint: 8
+    SpeedFactorToSecondTargetPoint: 0.8
+    LookAngleSppedFactor: 30
+    SetSteerAngleSensitivity: 5
+  m_RegimeCaption: Race
+  m_RegimeImage: {fileID: 21300000, guid: a8fdf2860f302e14094f799b9d654ad8, type: 3}
+  m_CarDriftConfig:
+    EnableSteerAngleMultiplier: 1
+    MinSteerAngleMultiplier: 0.05
+    MaxSteerAngleMultiplier: 1
+    MaxSpeedForMinAngleMultiplier: 250
+    SteerAngleChangeSpeed: 240
+    MinSpeedForSteerHelp: 20
+    HelpSteerPower: 0.8
+    OppositeAngularVelocityHelpPower: 0.01
+    PositiveAngularVelocityHelpPower: -0.1
+    MaxAngularVelocityHelpAngle: 90
+    AngularVelucityInMaxAngle: 0.5
+    AngularVelucityInMinAngle: 2
+    HandBrakeForwardStiffness: 0.5
+    HandBrakeSidewaysStiffness: 0.5
+  m_FrontWheelsConfig:
+    IsFoldout: 0
+    IsFullConfig: 0
+    Mass: 0
+    Radius: 0
+    WheelDampingRate: 0
+    SuspensionDistance: 0
+    ForceAppPointDistance: 0
+    Center: {x: 0, y: 0, z: 0}
+    Spring: 0
+    Damper: 0
+    TargetPoint: 0
+    ForwardFriction: 0.4
+    SidewaysFriction: 0.4
+  m_RearWheelsConfig:
+    IsFoldout: 0
+    IsFullConfig: 0
+    Mass: 0
+    Radius: 0
+    WheelDampingRate: 0
+    SuspensionDistance: 0
+    ForceAppPointDistance: 0
+    Center: {x: 0, y: 0, z: 0}
+    Spring: 0
+    Damper: 0
+    TargetPoint: 0
+    ForwardFriction: 0.4
+    SidewaysFriction: 0.4

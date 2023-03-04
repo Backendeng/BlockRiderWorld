@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f63cf633863ba4696631b0599241a7, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  m_MainMenuSceneName: MainMenuScene
+  m_DefaultRegimeSettings: {fileID: 11400000, guid: 93a435292f036614f8eaf1dda24da965,
+    type: 2}
+  m_RaceRegimeSettings: {fileID: 11400000, guid: 93a435292f036614f8eaf1dda24da965,
+    type: 2}
+  m_DriftRegimeSettings: {fileID: 11400000, guid: 23f28db9e4ec4e043a2cea2ee18120e0,
+    type: 2}
+  m_Tracks:
+  - {fileID: 11400000, guid: 595529baa3015f247975357e9fca81a1, type: 2}
+  - {fileID: 11400000, guid: 273dec20218bbae49ab75fd5d9ad0d99, type: 2}
+  m_BotNames:
+  - f00ber.eth
+  - mikey.eth
+  - IDontKnow
+  - names.eth
+  - testing
+  - johnnypig
+  - EmiliaCl.eth
+  - 0xuiay.eth
+  - teemoscoming.eth
+  - tr4d3rj03s.eth
+  - snipertrades.eth
+  - 817kab.eth
+  - 193.eth
+  - 118.eth
+  - emilybonsai.eth
+  - creedance.eth
+  - suayajlbsdf.eth
+  - weFPIj832.eth
