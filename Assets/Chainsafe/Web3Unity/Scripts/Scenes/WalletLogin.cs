@@ -9,6 +9,7 @@ using Web3Unity.Scripts.Library.Web3Wallet;
 public class WalletLogin : MonoBehaviour
 {
     public Toggle rememberMe;
+    public Text walletAddress;
     ProjectConfigScriptableObject projectConfigSO = null;
     private void Start()
     {
@@ -22,8 +23,10 @@ public class WalletLogin : MonoBehaviour
         // if remember me is checked, set the account to the saved account
         if (PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
             if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != "")
+                walletAddress.text = PlayerPrefs.GetString("Account");
                 // move to next scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                
     }
     public async void OnLogin()
     {
@@ -48,8 +51,9 @@ public class WalletLogin : MonoBehaviour
             else
                 PlayerPrefs.SetInt("RememberMe", 0);
             print("Account: " + account);
+            walletAddress.text = account;
             // load next scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     public string SignVerifySignature(string signatureString, string originalMessage)
