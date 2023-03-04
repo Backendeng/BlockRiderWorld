@@ -10,6 +10,9 @@ public class WalletLogin : MonoBehaviour
 {
     public Toggle rememberMe;
     public Text walletAddress;
+    public GameObject connectWallet;
+    public GameObject disConnectWallet;
+
     ProjectConfigScriptableObject projectConfigSO = null;
     private void Start()
     {
@@ -21,9 +24,19 @@ public class WalletLogin : MonoBehaviour
         PlayerPrefs.SetString("Network", projectConfigSO.Network);
         PlayerPrefs.SetString("RPC", projectConfigSO.RPC);
         // if remember me is checked, set the account to the saved account
-        if (PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
-            if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != "")
+        if (PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account")){
+            if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != ""){
                 walletAddress.text = PlayerPrefs.GetString("Account");
+                connectWallet.SetActive(false);
+                disConnectWallet.SetActive(true);
+            } else {
+                connectWallet.SetActive(true);
+                disConnectWallet.SetActive(false);
+            }
+        } else {
+            connectWallet.SetActive(true);
+            disConnectWallet.SetActive(false);
+        }
                 // move to next scene
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 
@@ -52,10 +65,13 @@ public class WalletLogin : MonoBehaviour
                 PlayerPrefs.SetInt("RememberMe", 0);
             print("Account: " + account);
             walletAddress.text = account;
+            connectWallet.SetActive(false);
+            disConnectWallet.SetActive(true);
             // load next scene
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+
     public string SignVerifySignature(string signatureString, string originalMessage)
     {
         var msg = "\x19" + "Ethereum Signed Message:\n" + originalMessage.Length + originalMessage;
@@ -63,5 +79,13 @@ public class WalletLogin : MonoBehaviour
         var signature = MessageSigner.ExtractEcdsaSignature(signatureString);
         var key = EthECKey.RecoverFromSignature(signature, msgHash);
         return key.GetPublicAddress();
+    }
+
+    public void OnLogOut()
+    {
+        PlayerPrefs.SetString("Account", "");
+        connectWallet.SetActive(true);
+        disConnectWallet.SetActive(false);
+        walletAddress.text = "wallet Address";
     }
 }
