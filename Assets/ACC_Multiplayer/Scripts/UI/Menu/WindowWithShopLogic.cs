@@ -77,6 +77,7 @@ public class WindowWithShopLogic :WindowWithShowHideAnimators
 		}
 
 		SelectButton.colors = state.ColorBlock;
+		Debug.Log(state.ButtonStr);
 		ButtonText.text = state.ButtonStr;
 	}
 }
