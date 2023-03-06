@@ -1,62 +1,53 @@
-using System.Text;
-using Nethereum.Signer;
-using Nethereum.Util;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Web3Unity.Scripts.Library.Web3Wallet;
 
-public class WalletLogin : MonoBehaviour
+public class WalletLogin: MonoBehaviour
 {
     public Toggle rememberMe;
     public Text walletAddress;
     public GameObject connectWallet;
     public GameObject disConnectWallet;
 
-    ProjectConfigScriptableObject projectConfigSO = null;
-    private void Start()
-    {
-        // loads the data saved from the editor config
-        projectConfigSO = (ProjectConfigScriptableObject)Resources.Load("ProjectConfigData", typeof(ScriptableObject));
-        PlayerPrefs.SetString("ProjectID", projectConfigSO.ProjectID);
-        PlayerPrefs.SetString("ChainID", projectConfigSO.ChainID);
-        PlayerPrefs.SetString("Chain", projectConfigSO.Chain);
-        PlayerPrefs.SetString("Network", projectConfigSO.Network);
-        PlayerPrefs.SetString("RPC", projectConfigSO.RPC);
+    void Start() {
         // if remember me is checked, set the account to the saved account
-        if (PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account")){
-            if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != ""){
+        if(PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
+        {
+            if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != "")
+            {
+                // move to next scene
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 walletAddress.text = PlayerPrefs.GetString("Account");
                 connectWallet.SetActive(false);
                 disConnectWallet.SetActive(true);
+                GetNFTs.GetAllNFTs();
             } else {
                 connectWallet.SetActive(true);
                 disConnectWallet.SetActive(false);
             }
         } else {
-            connectWallet.SetActive(true);
-            disConnectWallet.SetActive(false);
+                connectWallet.SetActive(true);
+                disConnectWallet.SetActive(false);
         }
-                // move to next scene
-                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                
     }
-    public async void OnLogin()
+
+    async public void OnLogin()
     {
         // get current timestamp
-        var timestamp = (int)System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1)).TotalSeconds;
+        int timestamp = (int)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
         // set expiration time
-        var expirationTime = timestamp + 60;
+        int expirationTime = timestamp + 60;
         // set message
-        var message = expirationTime.ToString();
+        string message = expirationTime.ToString();
         // sign message
-        var signature = await Web3Wallet.Sign(message);
+        string signature = await Web3Wallet.Sign(message);
         // verify account
-        var account = SignVerifySignature(signature, message);
-        var now = (int)System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1)).TotalSeconds;
+        string account = await EVM.Verify(message, signature);
+        int now = (int)(System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1))).TotalSeconds;
         // validate
-        if (account.Length == 42 && expirationTime >= now)
-        {
+        if (account.Length == 42 && expirationTime >= now) {
             // save account
             PlayerPrefs.SetString("Account", account);
             if (rememberMe.isOn)
@@ -64,21 +55,14 @@ public class WalletLogin : MonoBehaviour
             else
                 PlayerPrefs.SetInt("RememberMe", 0);
             print("Account: " + account);
+
             walletAddress.text = account;
             connectWallet.SetActive(false);
             disConnectWallet.SetActive(true);
+            GetNFTs.GetAllNFTs();
             // load next scene
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-    }
-
-    public string SignVerifySignature(string signatureString, string originalMessage)
-    {
-        var msg = "\x19" + "Ethereum Signed Message:\n" + originalMessage.Length + originalMessage;
-        var msgHash = new Sha3Keccack().CalculateHash(Encoding.UTF8.GetBytes(msg));
-        var signature = MessageSigner.ExtractEcdsaSignature(signatureString);
-        var key = EthECKey.RecoverFromSignature(signature, msgHash);
-        return key.GetPublicAddress();
     }
 
     public void OnLogOut()

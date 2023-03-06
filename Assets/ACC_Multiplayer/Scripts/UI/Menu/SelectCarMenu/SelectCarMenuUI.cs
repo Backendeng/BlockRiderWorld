@@ -25,6 +25,8 @@ public class SelectCarMenuUI :WindowWithShopLogic
 	[SerializeField] RectTransform ShownPanelPos;
 	[SerializeField] RectTransform HiddenPanelPos;
 	[SerializeField] float MovePanelsSpeed;
+	[SerializeField] GameObject collectVehicleBtn;
+	[SerializeField] GameObject StartRacingBtn;
 
 	bool IsMultiplayer;
 	int CurrentCarIndex;
@@ -55,6 +57,7 @@ public class SelectCarMenuUI :WindowWithShopLogic
 			CurrentCarIndex = 0;
 		}
 		SelectCar (Cars[CurrentCarIndex]);
+		
 	}
 
 	private IEnumerator Start ()
@@ -108,6 +111,15 @@ public class SelectCarMenuUI :WindowWithShopLogic
 
 	void SelectCar (CarPreset newCar)
 	{
+		collectVehicleBtn.SetActive(true);
+		StartRacingBtn.SetActive(false);
+		for ( int i = 0; i < GetNFTs.allNFTTokenIDs.Length; i++ ){
+			if (GetNFTs.allNFTTokenIDs[i] == CurrentCarIndex) {
+				collectVehicleBtn.SetActive(false);
+				StartRacingBtn.SetActive(true);
+			}
+		}
+
 		if (CarInScene)
 		{
 			Destroy (CarInScene.gameObject);
@@ -150,6 +162,7 @@ public class SelectCarMenuUI :WindowWithShopLogic
 	void NextCar ()
 	{
 		CurrentCarIndex = MathExtentions.LoopClamp (CurrentCarIndex + 1, 0, (Cars.Count));
+		// Debug.Log(CurrentCarIndex);
 		SelectCar (Cars[CurrentCarIndex]);
 	}
 
