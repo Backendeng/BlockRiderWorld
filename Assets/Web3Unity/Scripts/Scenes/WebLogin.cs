@@ -67,6 +67,7 @@ public class WebLogin : MonoBehaviour
         // Clear Account
         // PlayerPrefs.SetString("Account", "0x0000000000000000000000000000000000000001");
         PlayerPrefs.SetString("Account", "");
+        account = "";
         // go to login scene
         // SceneManager.LoadScene(0);
         connectWallet.SetActive(true);

@@ -14,29 +14,37 @@ public class GetNFTs : MonoBehaviour
         string chain = "ethereum";
         string network = "mainnet";
         string account = PlayerPrefs.GetString("Account");
+        // string account = "0x5f78114B064502a233e774F4385841C21830b39B";
         string contract = "0x296749978AEa0134F712BFE3d83c3F65D1e85AeA";
         
         int lastokenID = 23;
         
-        string[] accounts = new string[lastokenID];
-        string[] tokenIds = new string[lastokenID];
+        // string[] accounts = new string[lastokenID];
+        // string[] tokenIds = new string[lastokenID];
         allNFTTokenIDs = new int[lastokenID];
-        for (int i = 0; i < lastokenID; i++ ) {
-            accounts[i] = account;
-            tokenIds[i] = i.ToString();
-        }
+        // for (int i = 0; i < lastokenID; i++ ) {
+        //     accounts[i] = account;
+        //     tokenIds[i] = i.ToString();
+        // }
 
-        List<BigInteger> batchBalances = await ERC1155.BalanceOfBatch(chain, network, contract, accounts, tokenIds);
+        // List<BigInteger> batchBalances = await ERC1155.BalanceOfBatch(chain, network, contract, accounts, tokenIds);
         
         int index = 0;
 
         for (int i = 0; i < lastokenID; i++) {
-            if ((int) batchBalances[i] > 0 ){
+            // if ((int) batchBalances[i] > 0 ){
+            //     allNFTTokenIDs[index] = i;
+            //     index++;
+            //     print ("BalanceOfBatch: " + allNFTTokenIDs[i]);
+            // }
+
+            BigInteger balanceOf = await ERC1155.BalanceOf(chain, network, contract, account, i.ToString());
+            
+            if ((int) balanceOf > 0 ){
                 allNFTTokenIDs[index] = i;
                 index++;
             }
-
-            print ("BalanceOfBatch: " + allNFTTokenIDs[i]);
+            
         }
 
         print(index);
