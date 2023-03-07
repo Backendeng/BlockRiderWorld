@@ -11366,8 +11366,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1289002475}
-        m_TargetAssemblyTypeName: WalletLogin, Assembly-CSharp
+      - m_Target: {fileID: 1908590128}
+        m_TargetAssemblyTypeName: WebLogin, Assembly-CSharp
         m_MethodName: OnLogin
         m_Mode: 1
         m_Arguments:
@@ -20197,9 +20197,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1289002475}
-        m_TargetAssemblyTypeName: WalletLogin, Assembly-CSharp
-        m_MethodName: OnLogOut
+      - m_Target: {fileID: 1908590128}
+        m_TargetAssemblyTypeName: WebLogin, Assembly-CSharp
+        m_MethodName: OnSignOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37962,7 +37962,7 @@ GameObject:
   - component: {fileID: 1903861993}
   - component: {fileID: 1903861992}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: WalletAddress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38161,6 +38161,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1906164420}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1908590127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908590129}
+  - component: {fileID: 1908590128}
+  m_Layer: 0
+  m_Name: webGLWalletLogin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1908590128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908590127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa6e5a3cdd404aeebca024db9afeae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walletAddress: {fileID: 1903861992}
+  connectWallet: {fileID: 571534845}
+  disConnectWallet: {fileID: 1011898146}
+--- !u!4 &1908590129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908590127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.38102, y: 22.131613, z: 177.2565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1908894253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4024179324343364, guid: 566814b1eb74baa449f9fef747a83fd1,
