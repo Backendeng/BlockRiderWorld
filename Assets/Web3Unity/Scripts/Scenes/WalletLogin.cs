@@ -12,7 +12,7 @@ public class WalletLogin: MonoBehaviour
     public GameObject disConnectWallet;
 
     void Start() {
-        // GetNFTs.GetAllNFTs();
+        GetNFTs.GetAllNFTs();
         // if remember me is checked, set the account to the saved account
         if(PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
         {
