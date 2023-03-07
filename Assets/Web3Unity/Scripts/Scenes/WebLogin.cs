@@ -25,6 +25,10 @@ public class WebLogin : MonoBehaviour
     private int expirationTime;
     private string account; 
 
+    void Start() {
+
+    }
+
     public void OnLogin()
     {
         Web3Connect();
@@ -61,7 +65,8 @@ public class WebLogin : MonoBehaviour
     public void OnSignOut()
     {
         // Clear Account
-        PlayerPrefs.SetString("Account", "0x0000000000000000000000000000000000000001");
+        // PlayerPrefs.SetString("Account", "0x0000000000000000000000000000000000000001");
+        PlayerPrefs.SetString("Account", "");
         // go to login scene
         // SceneManager.LoadScene(0);
         connectWallet.SetActive(true);
