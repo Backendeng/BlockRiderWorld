@@ -28,6 +28,10 @@ public class GetNFTs : MonoBehaviour
         // }
 
         // List<BigInteger> batchBalances = await ERC1155.BalanceOfBatch(chain, network, contract, accounts, tokenIds);
+
+        for (int i = 0; i < lastokenID; i++) {
+            allNFTTokenIDs[i] = -1;
+        }
         
         int index = 0;
 
